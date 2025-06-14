@@ -1,6 +1,7 @@
 import meals from '../assets/meals.jpeg';
 import './Header.css';
 import CartIcon from './cartIcon';
+import RestaurantSummary from './RestaurantSummary';
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
       <div className="main-image">
         <img src={meals} alt="Header-image" />
       </div>
+      <RestaurantSummary />
     </>
   );
 };
