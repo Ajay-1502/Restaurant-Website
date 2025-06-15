@@ -1,7 +1,7 @@
 .available-meals {
   max-width: 50%;
   margin: 6vh auto;
-  padding: 1rem 2rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -15,20 +15,14 @@
 }
 
 .available-meals li {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-top: 1rem;
   border-bottom: 1px solid #ccc;
-}
-
-.available-meals li:last-child {
-  border-bottom: none;
 }
 
 .available-meals li strong {
   font-size: 1.1rem;
   display: block;
   font-weight: bold;
-  margin-bottom: 0.25rem;
 }
 
 .available-meals .description {
@@ -40,4 +34,51 @@
   color: brown;
   margin: 0.25rem 0;
   font-weight: bold;
+}
+
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal-info {
+  flex: 1;
+}
+
+.meal-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.meal-form-wrapper input {
+  width: 3rem;
+  margin-bottom: 10px;
+}
+
+.meal-form-wrapper label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.qty-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form button {
+  background-color: brown;
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

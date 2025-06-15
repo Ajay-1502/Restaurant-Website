@@ -45,10 +45,22 @@ const AvailableMeals = () => {
       <ul>
         {DUMMY_MEALS.map((meal) => {
           return (
-            <li key={meal.id}>
-              <strong>{meal.name}</strong>
-              <p className="description"> {meal.description} </p>
-              <p className="price">₹{meal.price}</p>
+            <li key={meal.id} className="meal-item">
+              <div className="meal-info">
+                <strong>{meal.name}</strong>
+                <p className="description">{meal.description}</p>
+                <p className="price">₹{meal.price}</p>
+              </div>
+
+              <div className="meal-form-wrapper">
+                <form>
+                  <div className="qty-wrapper">
+                    <label htmlFor="qty">Qty</label>
+                    <input type="number" id="qty" min="0" />
+                  </div>
+                  <button>+ Add</button>
+                </form>
+              </div>
             </li>
           );
         })}

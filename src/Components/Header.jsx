@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <h1 className="title">Restaurant Meals</h1>
+        <h1 className="title">The President Hotel</h1>
         <button className="cart-button">
           <CartIcon />
           <span>Your Cart - </span>
