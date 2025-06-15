@@ -1,0 +1,43 @@
+.available-meals {
+  max-width: 50%;
+  margin: 6vh auto;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.available-meals ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.available-meals li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.available-meals li:last-child {
+  border-bottom: none;
+}
+
+.available-meals li strong {
+  font-size: 1.1rem;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.available-meals .description {
+  margin: 0.25rem 0;
+  font-style: italic;
+}
+
+.available-meals .price {
+  color: brown;
+  margin: 0.25rem 0;
+  font-weight: bold;
+}
