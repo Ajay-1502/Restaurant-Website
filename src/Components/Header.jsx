@@ -3,12 +3,12 @@ import './Header.css';
 import CartIcon from './cartIcon';
 import RestaurantSummary from './RestaurantSummary';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className="header">
         <h1 className="title">The President Hotel</h1>
-        <button className="cart-button">
+        <button className="cart-button" onClick={props.displayCart}>
           <CartIcon />
           <span>Your Cart - </span>
           <span className="badge">0</span>

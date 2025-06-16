@@ -1,7 +1,7 @@
 import Modal from './Modal';
 import './Cart.css';
 
-const Cart = () => {
+const Cart = (props) => {
   const cartItems = [
     {
       id: 'm6',
@@ -11,7 +11,7 @@ const Cart = () => {
     },
   ];
   return (
-    <Modal>
+    <Modal hideCart={props.hideCart}>
       <div className="cart">
         <ul>
           {cartItems.map((item) => {
@@ -24,7 +24,9 @@ const Cart = () => {
                     <span className="total-amount">₹250</span>
                   </div>
                   <div className="actions">
-                    <button className="close">Close</button>
+                    <button className="close" onClick={props.hideCart}>
+                      Close
+                    </button>
                     <button className="order">Order</button>
                   </div>
                 </div>
