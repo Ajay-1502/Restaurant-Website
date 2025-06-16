@@ -1,0 +1,40 @@
+.item-name {
+  font-size: 18px;
+  list-type: none;
+  list-style-type: none;
+  margin-left: -35px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.close {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.order {
+  background-color: brown;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
