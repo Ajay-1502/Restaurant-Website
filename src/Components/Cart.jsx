@@ -1,39 +1,35 @@
+import { useContext } from 'react';
 import Modal from './Modal';
 import './Cart.css';
+import CartContext from '../Components/store/cart-context';
 
 const Cart = (props) => {
-  const cartItems = [
-    {
-      id: 'm6',
-      name: 'Burger',
-      description: 'American snack with cheese,patty',
-      price: 250,
-    },
-  ];
+  const CartCtx = useContext(CartContext);
+
+  const cartItems = CartCtx.items.map((item) => {
+    return (
+      <div className="item-name">
+        <li key={item.id}>{item.name}</li>
+        <div className="total">
+          <span className="total-text">{item.quantity}</span>
+          <span className="total-amount">{item.price}</span>
+          <button onClick={() => CartCtx.addItems(item)}>+</button>
+          <button onClick={() => CartCtx.removeItems(item.id)}>-</button>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <Modal hideCart={props.hideCart}>
       <div className="cart">
-        <ul>
-          {cartItems.map((item) => {
-            return (
-              <>
-                <div className="item-name">
-                  <li key={item.id}>{item.name}</li>
-                  <div className="total">
-                    <span className="total-text">Total Amount</span>
-                    <span className="total-amount">₹250</span>
-                  </div>
-                  <div className="actions">
-                    <button className="close" onClick={props.hideCart}>
-                      Close
-                    </button>
-                    <button className="order">Order</button>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-        </ul>
+        <ul>{cartItems}</ul>
+        <div className="actions">
+          <button className="close" onClick={props.hideCart}>
+            Close
+          </button>
+          <button className="order">Order</button>
+        </div>
       </div>
     </Modal>
   );

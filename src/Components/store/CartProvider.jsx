@@ -36,7 +36,7 @@ const CartProvider = (props) => {
       const exisitngItem = prevItems[existingItemIndex];
 
       if (exisitngItem.quantity === 1) {
-        prevItems.filter((i) => i.id != id);
+        updateItems = prevItems.filter((i) => i.id != id);
       } else {
         updateItems = [...prevItems];
         updateItems[existingItemIndex] = {
@@ -57,9 +57,11 @@ const CartProvider = (props) => {
     removeItems: removeItemCartHandler,
   };
 
-  <CartContext.Provider value={cartContext}>
-    {props.children}
-  </CartContext.Provider>;
+  return (
+    <CartContext.Provider value={cartContext}>
+      {props.children}
+    </CartContext.Provider>
+  );
 };
 
 export default CartProvider;
