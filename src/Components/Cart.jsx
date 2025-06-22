@@ -13,7 +13,9 @@ const Cart = (props) => {
         <div className="total">
           <span className="total-text">{item.quantity}</span>
           <span className="total-amount">{item.price}</span>
-          <button onClick={() => CartCtx.addItems(item)}>+</button>
+          <button onClick={() => CartCtx.addItems({ ...item, quantity: 1 })}>
+            +
+          </button>
           <button onClick={() => CartCtx.removeItems(item.id)}>-</button>
         </div>
       </div>

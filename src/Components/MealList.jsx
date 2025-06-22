@@ -9,8 +9,6 @@ const MealList = (props) => {
   const addToCartHandler = (event) => {
     event.preventDefault();
 
-    alert(`${props.name} is added to your cart`);
-
     CartCtx.addItems({
       id: props.id,
       name: props.name,
@@ -35,7 +33,7 @@ const MealList = (props) => {
               type="number"
               id={`qty-${props.id}`}
               min="1"
-              defaultValue="1"
+              value={quantity}
               onChange={(e) => setQuantity(+e.target.value)}
             />
           </div>
