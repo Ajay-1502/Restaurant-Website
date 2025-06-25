@@ -6,26 +6,31 @@ import CartContext from '../Components/store/cart-context';
 const Cart = (props) => {
   const CartCtx = useContext(CartContext);
 
+  const totalAmount = CartCtx.items.reduce((totalBill, item) => {
+    return totalBill + item.price * item.quantity;
+  }, 0);
+
   const cartItems = CartCtx.items.map((item) => {
     return (
-      <div className="item-name">
-        <li key={item.id}>{item.name}</li>
-        <div className="total">
-          <span className="total-text">{item.quantity}</span>
-          <span className="total-amount">{item.price}</span>
+      <li key={item.id} className="cart-item">
+        <span className="item-name">{item.name}</span>
+        <span className="item-price">₹{item.price}</span>
+        <div className="quantity-controls">
+          <button onClick={() => CartCtx.removeItems(item.id)}>-</button>
+          <span className="item-qty">{item.quantity}</span>
           <button onClick={() => CartCtx.addItems({ ...item, quantity: 1 })}>
             +
           </button>
-          <button onClick={() => CartCtx.removeItems(item.id)}>-</button>
         </div>
-      </div>
+      </li>
     );
   });
 
   return (
     <Modal hideCart={props.hideCart}>
       <div className="cart">
-        <ul>{cartItems}</ul>
+        <ul className="cart-items">{cartItems}</ul>
+        <h2>Total Amount : {totalAmount}</h2>
         <div className="actions">
           <button className="close" onClick={props.hideCart}>
             Close
